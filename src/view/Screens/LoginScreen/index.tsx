@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout, Text, Input} from '@ui-kitten/components';
+import {Layout, Text, Input, Button} from '@ui-kitten/components';
 import styles from './styles';
 import {LoginScreenProps} from 'src/Navigate/types';
 import {View} from 'react-native';
@@ -14,9 +14,13 @@ export default function LoginScreen({navigation}: LoginScreenProps) {
     setSecureTextEntry(!secureTextEntry);
   };
 
+  const onNavigation = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <Layout style={styles.container}>
-      <Text style={{marginHorizontal: '8%'}} category="h1">
+      <Text style={{marginHorizontal: '8%', marginTop: 20}} category="h1">
         Đăng nhập
       </Text>
       <Text
@@ -30,7 +34,7 @@ export default function LoginScreen({navigation}: LoginScreenProps) {
 
       <Layout style={styles.body}>
         <Input
-          placeholder="Place your Text"
+          placeholder="Nhập vào email"
           value={value}
           onChangeText={nextValue => setValue(nextValue)}
         />
@@ -40,6 +44,9 @@ export default function LoginScreen({navigation}: LoginScreenProps) {
           value={password}
           secureTextEntry={secureTextEntry}
         />
+      </Layout>
+      <Layout style={styles.containerButton} level="1">
+        <Button onPress={() => onNavigation()}>Đăng nhập</Button>
       </Layout>
     </Layout>
   );

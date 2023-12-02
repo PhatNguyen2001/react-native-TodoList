@@ -39,8 +39,9 @@ export const InputThemingShowcase = ({
 
   return (
     <Input
+      style={{marginTop: 20}}
       value={value}
-      placeholder="Place your Text"
+      placeholder="Nhập mật khẩu"
       caption={renderCaption}
       accessoryRight={renderIcon}
       secureTextEntry={secureTextEntry}

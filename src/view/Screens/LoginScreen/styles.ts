@@ -6,7 +6,16 @@ const styles = StyleSheet.create({
   },
   body: {
     marginHorizontal: '8%',
-    marginVertical: '25%',
+    marginVertical: '12%',
+  },
+  containerButton: {
+    flex: 1,
+    width: '100%',
+    paddingHorizontal: '8%',
+    borderRadius: 70,
+  },
+  text: {
+    marginHorizontal: 8,
   },
 });
 
