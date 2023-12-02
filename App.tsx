@@ -16,14 +16,27 @@ import {
   View,
 } from 'react-native';
 import * as eva from '@eva-design/eva';
-import {ApplicationProvider, Layout, Text} from '@ui-kitten/components';
-import HomeScreen from 'src/view/Screens/HomeScreen';
+import {
+  ApplicationProvider,
+  Layout,
+  Text,
+  Divider,
+  IconRegistry,
+} from '@ui-kitten/components';
+import {EvaIconsPack} from '@ui-kitten/eva-icons';
 
+import HomeScreen from 'src/view/Screens/HomeScreen';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigator from 'src/Navigate/Navigator';
 function App() {
   return (
-    <ApplicationProvider {...eva} theme={eva.light}>
-      <HomeScreen />
-    </ApplicationProvider>
+    <>
+      <IconRegistry icons={EvaIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <Navigator />
+      </ApplicationProvider>
+    </>
   );
 }
 

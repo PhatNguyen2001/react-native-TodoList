@@ -4,19 +4,30 @@ import {NavigationContainer} from '@react-navigation/native';
 import {RootStackParamList} from './types';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from 'src/view/Screens/HomeScreen';
+import TabNavigator from './TabNavigator';
+import LoginScreen from 'src/view/Screens/LoginScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function StackNavigator() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="LoginScreen"
       screenOptions={{
-        title: '',
-        headerShadowVisible: false,
-        headerTitleAlign: 'center',
+        headerShadowVisible: true,
+        headerTitle: '',
+        headerShown: false,
       }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="LoginScreen"
+        component={LoginScreen}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name="Home"
+        component={TabNavigator}
+      />
     </Stack.Navigator>
   );
 }
